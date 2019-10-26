@@ -5,15 +5,8 @@ router.use(bodyParser.json())
 
 const db = require('../db/db')
 
-router.get('/games', (req, res) => {
-  db.getGames()
-  .then(result => {res.json(result)})
-  .catch(err => res.status(500).end)
-})
-
-router.get('/games/game/:id', (req, res) => {
-  let {id} = req.body
-  db.getGameData(id)
+router.get('/aboutme', (req, res) => {
+  db.getAboutMe()
   .then(result => {res.json(result)})
   .catch(err => res.status(500).end)
 })
